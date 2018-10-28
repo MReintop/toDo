@@ -1,0 +1,20 @@
+<div>
+    <h1>Welcome</h1>
+
+
+<form type="POST">
+	<label>Task</label>
+	{{input type="text" class="form-control" value=task placeholder="Add Task"}}
+    <button {{action 'addTask'}} class="add-button" type="submit">Submit</button>
+
+</form>
+
+
+    {{#each model as |taskUnit|}}
+        {{task-listing task=taskUnit}}
+    {{/each}}
+
+    {{#link-to "about" class="task-to-about"}}
+
+    {{/link-to}}
+</div>
