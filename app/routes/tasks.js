@@ -15,8 +15,8 @@ export default Route.extend({
                 title:task
             };
             console.log(object1.title);
-
-            this.store.push({data:[object1]},"task","tasks");
+         //THIS IS WHERE IT GOES WRONG
+            this.store.push({data:[object1]},'task');
 
 
         }
