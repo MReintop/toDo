@@ -5,6 +5,9 @@ export default Component.extend({
     actions:{
         toggleDone(){
             this.toggleProperty('isDone');
-        }
+        },
+        model(){
+
+    }
     }
 });

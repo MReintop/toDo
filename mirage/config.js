@@ -5,15 +5,25 @@ export default function() {
     //TASK LIST
     let tasks=[{
                 type:'tasks',
+                id:'something-else',
+            attributes:{
+                title:"Something else.",
+                isdone:false
+            }
+
+                },{
+                type:'tasks',
                 id:'clean-your-room',
                 attributes:{
-                    title:'Clean your room.'
+                    title:'Clean your room.',
+                    isdone:true
                 }},
                  {
                 type:'tasks',
                 id:'clean-everything',
                 attributes:{
-                    title:'Clean Everything.'
+                    title:'Clean Everything.',
+                    isdone:false
                 }}];
 
     //GET PÄRING
@@ -31,6 +41,13 @@ export default function() {
       db.tasks.insert(params);
 
     });
+
+
+this.get('/tasks/:id', function(db, request) {
+  var id = request.params.id;
+     console.log("Jõudsin get Title");
+  return db.tasks.find(id);
+})
 
 
 

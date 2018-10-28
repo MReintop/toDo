@@ -2,17 +2,26 @@
     <h1>Welcome</h1>
 
 
-<form type="POST">
+
 	<label>Task</label>
 	{{input type="text" class="form-control" value=task placeholder="Add Task"}}
     <button {{action 'addTask'}} class="add-button" type="submit">Submit</button>
 
-</form>
 
 
     {{#each model as |taskUnit|}}
-        {{task-listing task=taskUnit}}
+
+    <li  {{action 'toggleDone' taskUnit.id }} class="{{taskUnit.isdone}}">
+        {{input type="checkbox" checked=taskUnit.isdone }}
+          <label>{{taskUnit.title}} - {{taskUnit.isdone}}</label>
+        </li>
+
+
+
+
+
     {{/each}}
+{{task-listing task=taskUnit}}
 
     {{#link-to "about" class="task-to-about"}}
 
