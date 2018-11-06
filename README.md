@@ -12,7 +12,7 @@ A short introduction of this app could easily go here.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd to-do-list`
+* `cd toDo`
 * `npm install`
 
 ## Running / Development
