@@ -1,22 +1,15 @@
 <div>
     <h1>Welcome</h1>
-
-
-
     <ul>
         {{#each model as |taskUnit|}}
-        <li  {{action 'toggleDone' taskUnit.id }} class="{{if taskUnit.isdone 'completed'}}">
+        <li  {{action 'toggleDone' taskUnit }} class="{{if taskUnit.isdone 'completed'}}">
               <h3>{{taskUnit.title}} </h3>
-            <button class="destroy" {{action "deleteTodo" taskUnit.id}}>DELETE TASK</button>
+            <button class="destroy" {{action "deleteTodo" taskUnit}}>DELETE TASK</button>
         </li>
         {{/each}}
     </ul>
 
-    {{input type="text" id="new-todo" placeholder="Add task"
-    value=task insert-newline='addTask'}}
+  {{input type="text" id="new-todo" placeholder="What needs to be done?"
+    value=task enter="addTask"}}
 
-
-    {{#link-to "about" class="task-to-about"}}
-
-    {{/link-to}}
 </div>
