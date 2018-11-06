@@ -5,5 +5,5 @@ export default function(server) {
     This data will not be loaded in your tests.
   */
 
-  server.createList('task', 3);
+  server.createList('task', 0);
 }
