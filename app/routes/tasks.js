@@ -6,8 +6,6 @@ export default Route.extend({
     model(){
 
      return this.store.findAll('task');
-
-
     },
     actions:{
         toggleDone(taskid){
@@ -26,7 +24,7 @@ export default Route.extend({
             var task = this.get('controller').get('task');
             console.log(task);
             let object1={
-              id:task,
+                id:Date.now(),
                 title:task,
                 isdone:false
             };
@@ -36,7 +34,13 @@ export default Route.extend({
             this.store.createRecord('task',object1);
 
 
-        }
+        },
+         deleteTodo(id) {
+            this.store.findRecord('task', id).then(function (task) {
+                task.deleteRecord();
+                task.get('isDeleted'); // => true
+                task.save(); // => DELETE to /posts/1
+        })}
 
 }});
 

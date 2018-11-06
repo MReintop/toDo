@@ -1,55 +1,7 @@
 import Mirage from 'ember-cli-mirage';
 
 export default function() {
-    this.namespace="/api";
-    //TASK LIST
-    let tasks=[{
-                type:'tasks',
-                id:'something-else',
-            attributes:{
-                title:"Something else.",
-                isdone:false
-            }
-
-                },{
-                type:'tasks',
-                id:'clean-your-room',
-                attributes:{
-                    title:'Clean your room.',
-                    isdone:true
-                }},
-                 {
-                type:'tasks',
-                id:'clean-everything',
-                attributes:{
-                    title:'Clean Everything.',
-                    isdone:false
-                }}];
-
-    //GET PÄRING
-    this.get("/tasks",function(db, request){
-        return{
-            data:tasks
-        };
-    });
-
-    this.post("/tasks",function(db,request){
-         var params = JSON.parse(request.requestBody).message;
-         console.log("BAAS");
-
-
-      db.tasks.insert(params);
-
-    });
-
-
-this.get('/tasks/:id', function(db, request) {
-  var id = request.params.id;
-     console.log("Jõudsin get Title");
-  return db.tasks.find(id);
-})
-
-
+    this.namespace = '/api';
 
 
 
@@ -66,15 +18,12 @@ this.get('/tasks/:id', function(db, request) {
   // this.namespace = '';    // make this `/api`, for example, if your API is namespaced
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
-  /*
-    Shorthand cheatsheet:
 
-    this.get('/posts');
-    this.post('/posts');
-    this.get('/posts/:id');
-    this.put('/posts/:id'); // or this.patch
-    this.del('/posts/:id');
 
-    http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
-  */
+    this.get('/tasks');
+    this.post('/tasks');
+    this.patch('/tasks/:id');
+    this.del('/tasks/:id');
+
+
 }

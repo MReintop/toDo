@@ -3,25 +3,18 @@
 
 
 
-	<label>Task</label>
-	{{input type="text" class="form-control" value=task placeholder="Add Task"}}
-    <button {{action 'addTask'}} class="add-button" type="submit">Submit</button>
-
-
-
-    {{#each model as |taskUnit|}}
-
-    <li  {{action 'toggleDone' taskUnit.id }} class="{{taskUnit.isdone}}">
-        {{input type="checkbox" checked=taskUnit.isdone }}
-          <label>{{taskUnit.title}} - {{taskUnit.isdone}}</label>
+    <ul>
+        {{#each model as |taskUnit|}}
+        <li  {{action 'toggleDone' taskUnit.id }} class="{{if taskUnit.isdone 'completed'}}">
+              <h3>{{taskUnit.title}} </h3>
+            <button class="destroy" {{action "deleteTodo" taskUnit.id}}>DELETE TASK</button>
         </li>
+        {{/each}}
+    </ul>
 
+    {{input type="text" id="new-todo" placeholder="Add task"
+    value=task insert-newline='addTask'}}
 
-
-
-
-    {{/each}}
-{{task-listing task=taskUnit}}
 
     {{#link-to "about" class="task-to-about"}}
 
