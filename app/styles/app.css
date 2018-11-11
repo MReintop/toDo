@@ -1,18 +1,26 @@
+body{
+    margin:auto;
+    width:500px;
+}
+
 #new-todo{
       margin: 10px;
     padding: 10px;
+   float:left;
+    top:10%;
 }
 
 li{
     margin-left: 10px;
     padding-left: 10px;
+    float:right;
 }
 button{
     color:white;
     background-color: red;
 }
 div{
-    position: fixed;
+    position:relavive;
     top: 10%;
     left: 35%;
 }
@@ -28,6 +36,7 @@ ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
+    float:right;
 }
 
 h3{
