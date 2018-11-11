@@ -1,5 +1,5 @@
 <div>
-    <h1>Welcome</h1>
+    <h1>List of ToDos</h1>
     <ul>
         {{#each model as |taskUnit|}}
         <li  {{action 'toggleDone' taskUnit }} class="{{if taskUnit.isdone 'completed'}}">

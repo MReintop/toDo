@@ -11,11 +11,16 @@ export default Route.extend({
             task.toggleProperty('isdone');
         },
         addTask() {
-            this.get('store').createRecord("task", {
-                id:Date.now(),
-                title: this.get('controller').get('task'),
-                isdone: false
-            });
+
+            if (this.get('controller').get('task')) {
+                this.get('store').createRecord("task", {
+                    id:Date.now(),
+                    title: this.get('controller').get('task'),
+                    isdone: false
+                });
+            }
+            this.get('controller').set('task', "");
+
         },
          deleteTodo(task) {
             task.destroyRecord();

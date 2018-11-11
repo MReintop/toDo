@@ -8,12 +8,13 @@ li{
     padding-left: 10px;
 }
 button{
-    margin: 0 auto;
+    color:white;
+    background-color: red;
 }
 div{
     position: fixed;
     top: 10%;
-    left: 50%;
+    left: 35%;
 }
 
 .completed{

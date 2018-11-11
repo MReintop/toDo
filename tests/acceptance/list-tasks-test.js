@@ -11,12 +11,12 @@ module('Acceptance | list tasks', function(hooks) {
         assert.equal(currentURL(),'/tasks','Should redirect automatically');
      });
 
-    test('should talk about this app', async function(assert){
+    /*test('should talk about this app', async function(assert){
         await visit('/');
         await click(".task-to-about");
         assert.equal(currentURL(),'/about','Link to about should work.');
     })
-        /*
+
      test('should show all tasks', async function(assert){
 
      });
